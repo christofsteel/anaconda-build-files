@@ -1,0 +1,68 @@
+package:
+  name: cbs
+  version: "1.0.0"
+
+source:
+  fn: cbs-1.0.0.tar.gz
+  url: https://pypi.python.org/packages/25/ef/a1a6bd275dd8236140b7cbfaa93b58b69a8a8dfb0157ca9ffe498c8c80e6/cbs-1.0.0.tar.gz
+  md5: 7effe270d48ead0ff636fe838b10c835
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - cbs = cbs:main
+    #
+    # Would create an entry point called cbs that calls cbs.main()
+
+    - cbs=cbs:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - h5py
+    - numpy
+
+  run:
+    - python
+    - h5py
+    - numpy
+    - samtools
+
+test:
+  # Python imports
+  # imports:
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - cbs --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/christofsteel/cbs
+  license: MIT License
+  summary: 'List coverage blind spots'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

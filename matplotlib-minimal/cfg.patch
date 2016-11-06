@@ -1,0 +1,30 @@
+diff --git setup.cfg.template setup.cfg.template
+index ba4cde3..8d8b7c5 100644
+--- setup.cfg.template
++++ setup.cfg.template
+60,71c60,71
+< #agg = auto
+< #cairo = auto
+< #gtk = auto
+< #gtk3agg = auto
+< #gtk3cairo = auto
+< #gtkagg = auto
+< #macosx = auto
+< #pyside = auto
+< #qt4agg = auto
+< #tkagg = auto
+< #windowing = auto
+< #wxagg = auto
+---
+> agg = False
+> cairo = False
+> gtk = False
+> gtk3agg = False
+> gtk3cairo = False
+> gtkagg = False
+> macosx = False
+> pyside = False
+> qt4agg = False
+> tkagg = False
+> windowing = False
+> wxagg = False

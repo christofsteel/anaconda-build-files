@@ -1,0 +1,70 @@
+package:
+  name: matplotlib-minimal
+  version: 1.5.3
+
+source:
+  fn: matplotlib-1.5.3.tar.gz
+  url: https://pypi.python.org/packages/75/4e/2374eed18ac34421ccd7b4907080abd3009e112ca2c11b100c18961312e0/matplotlib-1.5.3.tar.gz
+  md5: ba993b06113040fee6628d74b80af0fd
+  patches:
+    - cfg.patch
+    - cfg_notests.patch
+    - cfg_svg.patch
+    - osx-frame.patch     [osx]
+    - win_library_path.patch [win]
+    - omit_pep8.patch    [win]
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy
+    - python-dateutil
+    - freetype 2.5.*
+    - pyparsing
+    - pytz
+    - pycairo             [linux and py2k]
+    - tornado
+    - libpng 1.6.*
+    - zlib 1.2.*          [win]
+    - bzip2 1.0.*         [win]
+    - tk 8.5.*            [win]
+    - cycler
+    - nose
+    - freetype
+  run:
+    - python
+    - numpy
+    - python-dateutil
+    - freetype 2.5.*      [unix]
+    - pytz
+    - pyparsing
+    - pycairo             [linux and py2k]
+    - zlib 1.2.*          [win]
+    - tk 8.5.*            [win]
+    - libpng 1.6.*
+    - cycler
+    - freetype
+
+test:
+  requires:
+    - nose
+    - mock
+  imports:
+    - matplotlib
+
+about:
+  home: http://matplotlib.org/
+  license: PSF-based
+  license_url: http://matplotlib.sourceforge.net/users/license.html
+  license_family: PSF
+  license_file: LICENSE/LICENSE
+  summary: Python 2D plotting library
+  description: |
+    matplotlib is a python 2D plotting library which produces publication
+    quality figures in a variety of hardcopy formats and interactive
+    environments across platforms. matplotlib can be used in Python scripts,
+    the Python and IPython shell (ala MATLAB or Mathematica), web
+    application servers, and six graphical user interface toolkits.
+  doc_url: http://matplotlib.org/contents.html#
+  dev_url: https://github.com/matplotlib/matplotlib
