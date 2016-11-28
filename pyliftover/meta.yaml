@@ -1,0 +1,63 @@
+package:
+  name: pyliftover
+  version: "0.3"
+
+source:
+  fn: pyliftover-0.3.zip
+  url: https://pypi.python.org/packages/95/1a/85ca6e7cbfcc6a3d0e480d446791ff56388235ffc9c922a8067994b5f44f/pyliftover-0.3.zip
+  md5: db3a4cf5fbfce534d8978dac66f2f039
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pyliftover = pyliftover:main
+    #
+    # Would create an entry point called pyliftover that calls pyliftover.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  # Python imports
+  imports:
+    - pyliftover
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - pytest
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/konstantint/pyliftover
+  license: MIT License
+  summary: 'Pure-python implementation of UCSC ``liftOver`` genome coordinate conversion.'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
